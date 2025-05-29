@@ -1,0 +1,207 @@
+/* Documentation specific styles */
+
+.docs-container {
+    display: flex;
+    margin-top: 80px;
+    min-height: calc(100vh - 80px - 300px); /* Subtract header and footer heights */
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #161b22;
+    border-right: 1px solid #30363d;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #30363d;
+}
+
+.sidebar-header h3 {
+    color: white;
+    margin: 0;
+}
+
+.sidebar-nav {
+    padding: 20px 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 5px;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 10px 20px;
+    color: #8b949e;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-nav a:hover {
+    background-color: #1c2129;
+    color: #e6edf3;
+}
+
+.sidebar-nav a.active {
+    background-color: #1c2129;
+    color: #00ff00;
+    border-left-color: #00ff00;
+}
+
+.docs-content {
+    flex: 1;
+    padding: 40px;
+    background-color: #0d1117;
+    overflow-y: auto;
+}
+
+.docs-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.docs-content h2 {
+    font-size: 1.8rem;
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #30363d;
+    color: white;
+}
+
+.docs-content h3 {
+    font-size: 1.4rem;
+    margin: 30px 0 15px;
+    color: white;
+}
+
+.docs-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #c9d1d9;
+}
+
+.docs-content ul, .docs-content ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    color: #c9d1d9;
+}
+
+.docs-content li {
+    margin-bottom: 10px;
+}
+
+.docs-content pre {
+    background-color: #161b22;
+    border-radius: 6px;
+    padding: 20px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    border: 1px solid #30363d;
+}
+
+.docs-content code {
+    font-family: 'Fira Code', monospace;
+    color: #e6edf3;
+    background-color: #161b22;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.docs-content pre code {
+    padding: 0;
+    background-color: transparent;
+}
+
+.docs-content a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.docs-content a:hover {
+    text-decoration: underline;
+}
+
+.docs-content section {
+    margin-bottom: 40px;
+}
+
+.commands-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.commands-table th,
+.commands-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #30363d;
+}
+
+.commands-table th {
+    background-color: #161b22;
+    color: white;
+    font-weight: 600;
+}
+
+.commands-table tr:hover {
+    background-color: #1c2129;
+}
+
+.commands-table td:first-child {
+    width: 30%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .docs-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+    }
+    
+    .docs-content {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .docs-content h1 {
+        font-size: 2rem;
+    }
+    
+    .docs-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .docs-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .commands-table td,
+    .commands-table th {
+        padding: 10px;
+    }
+    
+    .commands-table td:first-child {
+        width: 40%;
+    }
+}
