@@ -1,18 +1,28 @@
 # Terminal LLM Chat Website
 
-This folder contains the website for the Terminal LLM Chat project.
+> **Note:** This README is just a reference. The actual website is served from the `index.html` file.
 
-## GitHub Pages
+## GitHub Pages Setup
 
-This website is configured to be served using GitHub Pages from the `/docs` folder.
+This website is hosted using GitHub Pages from the `/docs` folder. To view the live site, go to:
+https://syanhg.github.io/terminal-llm-chat/
 
-## Development
+## Local Development
 
-To develop this website locally:
+To run this website locally:
 
 1. Clone the repository
 2. Navigate to the `docs` folder
 3. Open `index.html` in your browser
+
+## Website Structure
+
+- `index.html` - Main landing page
+- `css/style.css` - Main stylesheet
+- `css/docs.css` - Documentation-specific styles
+- `js/main.js` - JavaScript functionality
+- `img/` - Images and assets
+- `docs/` - Documentation pages
 
 ## Technologies Used
 
@@ -20,10 +30,3 @@ To develop this website locally:
 - CSS3
 - JavaScript (vanilla)
 - No frameworks or libraries required
-
-## Structure
-
-- `index.html` - Main landing page
-- `css/` - Stylesheets
-- `js/` - JavaScript files
-- `img/` - Images and assets
