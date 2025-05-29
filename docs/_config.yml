@@ -1,6 +1,4 @@
-theme: jekyll-theme-minimal
 title: Terminal LLM Chat
 description: A terminal-based interface for large language models
 baseurl: "/terminal-llm-chat"
 url: "https://syanhg.github.io"
-permalink: pretty
