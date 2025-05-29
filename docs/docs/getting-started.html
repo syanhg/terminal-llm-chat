@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started - Terminal LLM Chat</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/docs.css">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <meta name="description" content="Getting started with Terminal LLM Chat - installation and basic usage guide">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/terminal-logo.png" alt="Terminal LLM Chat Logo">
+                    <h1>Terminal LLM Chat</h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#features">Features</a></li>
+                    <li><a href="../index.html#installation">Installation</a></li>
+                    <li><a href="../index.html#usage">Usage</a></li>
+                    <li><a href="../index.html#demo">Demo</a></li>
+                    <li><a href="../index.html#docs" class="active">Docs</a></li>
+                    <li><a href="https://github.com/syanhg/terminal-llm-chat" class="github-button">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="docs-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Documentation</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="getting-started.html" class="active">Getting Started</a></li>
+                    <li><a href="configuration.html">Configuration</a></li>
+                    <li><a href="api-keys.html">API Keys</a></li>
+                    <li><a href="plugins.html">Plugins</a></li>
+                    <li><a href="themes.html">Themes</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="docs-content">
+            <h1>Getting Started with Terminal LLM Chat</h1>
+            
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <p>Terminal LLM Chat is a command-line interface for interacting with large language models (LLMs) like GPT-4, Claude, and others. It provides a nostalgic terminal experience combined with modern AI capabilities.</p>
+                <p>This guide will help you install Terminal LLM Chat and get started with the basic features.</p>
+            </section>
+
+            <section id="requirements">
+                <h2>Requirements</h2>
+                <ul>
+                    <li>Python 3.7 or higher</li>
+                    <li>pip (Python package manager)</li>
+                    <li>API key from at least one of the supported LLM providers:
+                        <ul>
+                            <li>OpenAI</li>
+                            <li>Anthropic</li>
+                            <li>OpenRouter</li>
+                            <li>Local setup with Ollama (no API key required)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="installation">
+                <h2>Installation</h2>
+                
+                <h3>Method 1: Install from PyPI (Recommended)</h3>
+                <p>The easiest way to install Terminal LLM Chat is through pip:</p>
+                <pre><code>pip install terminal-llm-chat</code></pre>
+                <p>This will install the package and its dependencies. After installation, you can run the application with:</p>
+                <pre><code>terminal-chat</code></pre>
+
+                <h3>Method 2: Install from Source</h3>
+                <p>To install from source:</p>
+                <pre><code>git clone https://github.com/syanhg/terminal-llm-chat.git
+cd terminal-llm-chat
+pip install -e .</code></pre>
+                <p>This installs the package in development mode, allowing you to make changes to the code.</p>
+
+                <h3>Method 3: Using Docker</h3>
+                <p>If you prefer using Docker:</p>
+                <pre><code>docker pull syanhg/terminal-llm-chat
+docker run -it syanhg/terminal-llm-chat</code></pre>
+            </section>
+
+            <section id="first-run">
+                <h2>First Run</h2>
+                <p>When you run Terminal LLM Chat for the first time, it will guide you through a setup process:</p>
+                
+                <ol>
+                    <li>
+                        <strong>Choose an LLM provider</strong>
+                        <p>Select from OpenAI, Anthropic, OpenRouter, or Ollama (local)</p>
+                    </li>
+                    <li>
+                        <strong>Enter your API key</strong>
+                        <p>You'll need to provide an API key for your chosen provider (except for Ollama)</p>
+                    </li>
+                    <li>
+                        <strong>Select a default model</strong>
+                        <p>Choose which model you want to use by default</p>
+                    </li>
+                    <li>
+                        <strong>Choose a theme</strong>
+                        <p>Select from classic green, amber, blue, or custom themes</p>
+                    </li>
+                </ol>
+
+                <p>All settings are saved to a configuration file in your home directory at <code>~/.config/terminal-llm-chat/config.ini</code> (or equivalent on Windows).</p>
+            </section>
+
+            <section id="basic-usage">
+                <h2>Basic Usage</h2>
+                
+                <h3>Starting a Conversation</h3>
+                <p>After launching Terminal LLM Chat, you can start typing your messages directly:</p>
+                <pre><code>terminal-chat
+> Hello, can you help me understand Docker containers?</code></pre>
+                
+                <h3>Using Commands</h3>
+                <p>Terminal LLM Chat supports various commands that begin with a forward slash:</p>
+                
+                <table class="commands-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>/help</code></td>
+                            <td>Display available commands</td>
+                        </tr>
+                        <tr>
+                            <td><code>/clear</code></td>
+                            <td>Clear the screen</td>
+                        </tr>
+                        <tr>
+                            <td><code>/exit</code></td>
+                            <td>Exit the application</td>
+                        </tr>
+                        <tr>
+                            <td><code>/save [filename]</code></td>
+                            <td>Save the current conversation</td>
+                        </tr>
+                        <tr>
+                            <td><code>/load [filename]</code></td>
+                            <td>Load a saved conversation</td>
+                        </tr>
+                        <tr>
+                            <td><code>/system [prompt]</code></td>
+                            <td>View or change the system instructions</td>
+                        </tr>
+                        <tr>
+                            <td><code>/models</code></td>
+                            <td>List available models</td>
+                        </tr>
+                        <tr>
+                            <td><code>/model [name]</code></td>
+                            <td>Switch to a different model</td>
+                        </tr>
+                        <tr>
+                            <td><code>/theme [name]</code></td>
+                            <td>Change the color theme</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="advanced-usage">
+                <h2>Advanced Usage</h2>
+                
+                <h3>Command-line Arguments</h3>
+                <p>Terminal LLM Chat supports various command-line arguments for advanced use:</p>
+                
+                <pre><code>terminal-chat --help
+
+Usage: terminal-chat [OPTIONS]
+
+Options:
+  --model TEXT          Specify the model to use
+  --system TEXT         Set a custom system prompt
+  --load TEXT           Load a saved conversation
+  --config TEXT         Use a specific config file
+  --theme TEXT          Set the color theme
+  --api-key TEXT        Set the API key
+  --provider TEXT       Set the provider (openai, anthropic, etc.)
+  --no-streaming        Disable streaming responses
+  --verbose             Enable verbose logging
+  --version             Show the version and exit
+  --help                Show this message and exit</code></pre>
+                
+                <h3>Multi-line Input</h3>
+                <p>For entering multi-line text or code blocks, you can use triple backticks:</p>
+                <pre><code>> ```
+def hello_world():
+    print("Hello, world!")
+    
+hello_world()
+```</code></pre>
+                <p>This allows you to format your input properly when writing code or structured text.</p>
+            </section>
+
+            <section id="next-steps">
+                <h2>Next Steps</h2>
+                <p>Now that you have Terminal LLM Chat installed and running, you might want to explore:</p>
+                <ul>
+                    <li><a href="configuration.html">Configuration</a> - Learn how to customize Terminal LLM Chat</li>
+                    <li><a href="api-keys.html">API Keys</a> - How to set up and manage API keys for different providers</li>
+                    <li><a href="plugins.html">Plugins</a> - Extend functionality with plugins</li>
+                    <li><a href="themes.html">Themes</a> - Create and customize themes</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../img/terminal-logo.png" alt="Terminal LLM Chat Logo">
+                    <p>Terminal LLM Chat</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Project</h4>
+                        <ul>
+                            <li><a href="https://github.com/syanhg/terminal-llm-chat">GitHub</a></li>
+                            <li><a href="https://pypi.org/project/terminal-llm-chat/">PyPI</a></li>
+                            <li><a href="https://github.com/syanhg/terminal-llm-chat/issues">Issues</a></li>
+                            <li><a href="https://github.com/syanhg/terminal-llm-chat/releases">Releases</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Documentation</h4>
+                        <ul>
+                            <li><a href="getting-started.html">Getting Started</a></li>
+                            <li><a href="api.html">API Reference</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="contributing.html">Contributing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="https://discord.gg/terminal-llm-chat">Discord</a></li>
+                            <li><a href="https://twitter.com/terminalllmchat">Twitter</a></li>
+                            <li><a href="mailto:contact@example.com">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Terminal LLM Chat. Released under the MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
